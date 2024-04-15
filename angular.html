@@ -1,0 +1,8 @@
+<div ng-controller="MultiTypingController as ctrl">
+    <h1>
+      <span class="animation-container" ng-repeat="word in ctrl.words" ng-if="ctrl.currentIndex === $index">
+        <span class="word-animation">{{ word }}</span>
+      </span>
+    </h1>
+  </div>
+  

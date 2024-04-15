@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<ht lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh Saini Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/4c40c71eac.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-animate.min.js"></script>
+    <style>
+        .animation-container {
+          display: inline-block;
+        }
+        .word-animation {
+          animation: slide-in 3.5s ease;
+        }
+        @keyframes slide-in {
+          0% { transform: translateY(0); opacity: 0; }
+    
+          50% { transform: translateY(-100%); opacity: 1; }
+    
+        100%{
+          transform: translateY(0); opacity: 0;
+        }
+        }
+      </style> 
+</head>
+
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" alt="Harsh." class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-circle-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text" ng-app="multiTypingApp" ng-controller="MultiTypingController as ctrl"> 
+                <h1>
+                    <span class="animation-container" ng-repeat="word in ctrl.words" ng-if="ctrl.currentIndex === $index">
+                        <span class="word-animation">{{ word }}</span>
+                    </span>
+                </h1>
+                <h1>Hi, I'm <span>Harsh</span> Saini</h1>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        angular.module('multiTypingApp', ['ngAnimate'])
+            .controller('MultiTypingController', function($scope, $interval) {
+                var vm = this;
+                
+                vm.words = ['Freelancer', 'Developer', 'Data Analyst', 'Student'];
+                vm.currentIndex = 0;
+                
+                $interval(function() {
+                    vm.currentIndex = (vm.currentIndex + 1) % vm.words.length;
+                }, 3000); // Change word every 3 seconds
+            });
+    </script>
+
+
+
+    <!-------------------------------------------------about-------------------------------------------------------------------------->
+<div id="about">
+    <div class=container>
+        <div class="row">
+            <div class=c1>
+               <img src="images/1712349066980.jpg" alt="my image" class="my-img">
+            </div>
+            <div class="c2">
+            <h1 class="subtitle">About me</h1>
+            <p>Hello there! I'm Harsh Saini, currently pursuing my Bachelor of Technology in Computer Science and Engineering (CSE) 
+                at UPES (University of Petroleum and Energy Studies).
+                Technology has always intrigued me, and I've found myself delving deep into the world of computers,
+                 algorithms, and programming languages. My journey into the realm of CSE has been nothing short of 
+                 exhilarating, filled with challenges that have only fueled my passion for innovation and problem-solving.
+                When I'm not immersed in lines of code or debugging software, you can find me exploring the great outdoors, 
+                capturing moments through my camera lens, or indulging in a good book.
+                I'm excited to see where this journey takes me and eager to make a meaningful contribution to the ever-evolving 
+                field of Computer Science and Engineering. Join me as I embark on this exhilarating adventure!</p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience </p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li> <span>Java</span></li>
+                        <li> <span>Hadoop Framework</span><br>Data Analyst</li>
+                        <li> <span>Web Development</span><br>Website Designer</li>
+                        <li> <span>Photography</span><br>Event Photography<br>Wedding Photography</li>
+
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li> <span></span><br> No Experience Yet</li>
+                       
+                        
+
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li> <span>2024-Current</span><br> Persuing Btech Computer Science at UPES</li>
+                        <li> <span>2022</span><br>Higher Secondary Education  from NDPS Gangoh</li>
+                        <li> <span>2020</span><br>Secondary Education from NDPS Gangoh</li>
+                        
+
+                    </ul>
+                </div>
+            </div>
+            </div>
+
+</div>
+<!--------------------services-------------------->
+<div id="services">
+    <div class="container">
+        <h1 class="subtitle"> My Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-laptop-code"></i>
+                <h2>Web Design</h2>
+                <p>
+                    "I create eye-catching websites that are easy to use. 
+                    I know how to make them look good and work well on any device. 
+                    I use tools like HTML and CSS, 
+                    and I keep up with the latest trends in design to make sure my work is top-notch."
+                </p>
+                <a href="#"> Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-filter"></i>
+                <h2>Big Data Analytics</h2>
+                <p>
+                    "I'm skilled at analyzing big sets of data to find useful information. 
+                    I use tools like Hadoop and Spark to work with large amounts of data efficiently.
+                     With Python and SQL, I can dig into data to uncover insights that help 
+                     businesses make better decisions and improve how they work."
+                </p>
+                <a href="#"> Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-clapperboard"></i>
+                <h2>Photography</h2>
+                <p>
+                    "I love taking pictures! From beautiful landscapes to candid portraits, 
+                    I capture moments that tell stories. 
+                    I bring my passion for technology from my computer science
+                     background into my photography, blending creativity with technical skill. 
+                     My goal is to capture the beauty and emotion of life through my lens."
+                </p>
+                <a href="#"> Learn more</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-------------portfolio-------------------------->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="subtitle">My Work</h1>
+        <div class="work-list">
+          <div class="work">
+            <img src="images/work1.jpg" alt="work image" >
+            <div class="layer">
+                <h3>Workout Planar and Calorie Counter</h3>
+                <p>"Workout Planner and Calorie Counter is a user-friendly app designed to help you reach your fitness goals. Plan personalized workouts and track your calorie intake effortlessly. Whether you're a beginner or a fitness pro, this app makes staying healthy easy."</p>
+                <a href="https://github.com/Harshsaini8863/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+            
+          </div>
+          <div class="work">
+            <img src="images/work2.jpg" alt="work image" >
+            <div class="layer">
+                <h3>Gym Membership Manager</h3>
+                <p>"Gym Membership Manager is an efficient tool for gym owners to organize memberships, track calories of user, 
+                    and manage member details effortlessly. Simplify your gym's administrative tasks and streamline membership 
+                    processes with this user-friendly solution."</p>
+                <a href="https://github.com/Harshsaini8863/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+
+        </div>
+        <a href="#" class="btn">See more</a>
+    </div>
+</div>
+
+<!----------------------- contact-------------------- -->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="subtitle">Contact me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i> harsh10072004@gmail.com</p>
+                
+                <p><i class="fa-solid fa-phone"></i> 9520005488</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/harshsaini8863/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://l.instagram.com/?u=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fharsh-saini-9180a816a&e=AT1GX8I_XDIvT9buzpxXcvkipFlLUUH29UQkRw-tx6GvKTTappcd6R1z9ioexkFNFkv313F7r-CU47RcjTkLyt2qZ-tr_SWafIKfpA"  target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/Harshsaini8863/" target="_blank"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <a href="images/cv.pdf"  download class="btn  btn2">Download CV</a>
+            </div>
+
+                <div class="contact-right">
+            <form name="submit-to-google-sheet">
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="text" name="email" placeholder="Your Email" required>
+                <textarea name="Message" rows="6" placeholder="Your Messaage"></textarea>
+                 <button type="submit" class="btn btn2">Submit</button>   
+                </div>
+            </form>
+            <span id="msg"></span>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>
+            Copyright <i class="fa-regular fa-copyright"></i> Harsh
+        </p>
+    </div>
+</div>
+<script>
+var tablinks= document.getElementsByClassName("tab-links");
+var tabcontents= document.getElementsByClassName("tab-contents");
+
+function opentab(tabname){
+    for(tablink of tablinks){
+        tablink.classList.remove("active-link");
+    }
+
+    for(tabcontent of tabcontents){
+        tabcontent.classList.remove("active-tab");
+    }
+    event.currentTarget.classList.add("active-link")
+    document.getElementById(tabname).classList.add("active-tab")
+
+}
+</script>
+<script>
+
+    var sidemenuu  = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenuu.style.right="0";
+    }
+    function closemenu(){
+        sidemenuu.style.right="-200px";
+    }
+
+
+
+</script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxqCAe2M05xZANcOYvgeEEhtySTNjTFuiBYgFkJ_6GrnQ1l-YVNQMffLJD_pohlFGBovg/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg =document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },2000)
+            form.reset()
+    })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+  
+</body>
+</html>
